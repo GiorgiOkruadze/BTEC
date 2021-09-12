@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Scoring.DatabaseEntity\Scoring.DatabaseEntity.csproj" />
+    <ProjectReference Include="..\Scoring.DatabaseModels\Scoring.DatabaseModels.csproj" />
+  </ItemGroup>
+
+</Project>
