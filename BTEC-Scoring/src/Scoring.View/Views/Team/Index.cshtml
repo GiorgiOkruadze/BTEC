@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -21,7 +21,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.CompletedEventsCount)
             </th>
-            <th></th>
+            <th>
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -37,9 +42,14 @@
                 @Html.DisplayFor(modelItem => item.CompletedEventsCount)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new {}, htmlAttributes: new { @class = "btn btn-warning col-md-12" }) 
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new {}, htmlAttributes: new { @class = "btn btn-success col-md-12" }) 
+
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new {}, htmlAttributes: new { @class = "btn btn-danger col-md-12" })
             </td>
         </tr>
 }

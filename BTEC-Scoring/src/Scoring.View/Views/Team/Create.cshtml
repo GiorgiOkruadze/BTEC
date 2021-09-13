@@ -1,24 +1,43 @@
 ﻿@model Scoring.ApplicationServices.Commands.CreateTeamCommand
 
-@{
-    ViewData["Title"] = "Create";
-}
 
 <h1>Create</h1>
 
 <h4>CreateTeamCommand</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-9">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="form-group col-md-6 p-l-0">
                 <label asp-for="TeamName" class="control-label"></label>
                 <input asp-for="TeamName" class="form-control" />
                 <span asp-validation-for="TeamName" class="text-danger"></span>
             </div>
+            <fieldset class="student-container">
+                @for (int i = 0; i < Model.Students.Count; i++)
+                {
+                <div class="student d-flex justify-content-between align-items-end">
+                    <div class="form-group col-md-3 p-l-0">
+                        <label asp-for="@Model.Students[i].Name" class="control-label"></label>
+                        <input asp-for="@Model.Students[i].Name" class="form-control" placeholder="Enter here" />
+                    </div>
+                    <div class="form-group col-md-3 p-l-0">
+                        <label asp-for="@Model.Students[i].Surname" class="control-label"></label>
+                        <input asp-for="@Model.Students[i].Surname" class="form-control" placeholder="Enter here" />
+                    </div>
+                    <div class="form-group col-md-3 p-l-0">
+                        <label asp-for="@Model.Students[i].Email" class="control-label"></label>
+                        <input asp-for="@Model.Students[i].Email" class="form-control" placeholder="Enter here" />
+                    </div>
+                    <div class="form-group col-md-3 p-l-0">
+                        <button type="button" id="studentDeleteBtn" class="btn btn-danger">Delete Row</button>
+                    </div>
+                </div>
+                }
+            </fieldset>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary col-md-6 p-l-0" />
             </div>
         </form>
     </div>
@@ -31,3 +50,15 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+
+<script>
+    var studentsCont = document.querySelector(".student-container");
+    var studentDeleteBtn = document.querySelectorAll("#studentDeleteBtn");
+    studentDeleteBtn.forEach(item => {
+        item.addEventListener("click", function () {
+            var btnParrent = this.parentNode.parentNode;
+            studentsCont.removeChild(btnParrent);
+        });
+    })
+</script>

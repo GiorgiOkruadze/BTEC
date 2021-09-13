@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Scoring.ApplicationServices.Commands;
 using Scoring.ApplicationServices.Queries;
+using Scoring.ApplicationShared.DTOs;
 using Scoring.CoreServices.Repositories.Abstractions;
 using Scoring.DatabaseModels.Models;
 using System;
@@ -36,19 +38,24 @@ namespace Scoring.View.Controllers
         // GET: TeamController/Create
         public ActionResult Create()
         {
-            return View();
+            var teamCommand = new CreateTeamCommand()
+            {
+                Students = new List<StudentDto>() { new StudentDto(), new StudentDto(), new StudentDto(), new StudentDto(), new StudentDto() }
+            };
+            return View(teamCommand);
         }
 
         // POST: TeamController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create([FromForm] CreateTeamCommand team)
         {
-            try
-            {
+
+            var result = await _mediator.Send(team);
+            if (result) { 
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            else
             {
                 return View();
             }
