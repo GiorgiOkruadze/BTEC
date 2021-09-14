@@ -21,6 +21,13 @@ namespace Scoring.CoreServices.Repositories
             _entity = dbContext.Set<T>();
         }
 
+        public async Task<int> CreateAndGetIdAsync(T item)
+        {
+            await _entity.AddAsync(item);
+            await SaveAsync();
+            return item.Id;
+        }
+
         public async Task<bool> CreateAsync(T item)
         {
             await _entity.AddAsync(item);
@@ -46,7 +53,7 @@ namespace Scoring.CoreServices.Repositories
 
         public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> filter = null, List<Expression<Func<T, object>>> includes = null)
         {
-            return await _entity.Where(filter).IncludeAll(includes).AsNoTracking().ToListAsync();
+            return await _entity.Where(filter)?.IncludeAll(includes).AsNoTracking().ToListAsync();
         }
 
         public async Task<T> GetOneAsync(Expression<Func<T, bool>> filter = null, List<Expression<Func<T, object>>> includes = null)

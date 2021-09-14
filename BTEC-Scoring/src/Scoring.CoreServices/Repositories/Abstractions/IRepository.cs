@@ -10,6 +10,7 @@ namespace Scoring.CoreServices.Repositories.Abstractions
     public interface IRepository<T> where T : BaseEntity
     {
         Task<bool> CreateAsync(T item);
+        Task<int> CreateAndGetIdAsync(T item);
         DbSet<T> Get();
         Task<bool> UpdateAsync(int id, T item);
         Task<bool> DeleteAsync(int id);

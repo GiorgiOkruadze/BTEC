@@ -15,6 +15,10 @@ namespace Scoring.ApplicationServices.Mappers
                 .ForMember(dtoModel => dtoModel.MembersCount, dbModel => dbModel.MapFrom(o => o.Students.Count()))
                 .ReverseMap();
 
+            CreateMap<EventDto, EventViewModelForEdit>().ReverseMap();
+            CreateMap<Event, UpdateEventCommand>().ReverseMap();
+            CreateMap<Event, EventDto>().ReverseMap();
+            CreateMap<Event, CreateEventCommand>().ReverseMap();
             CreateMap<Team, UpdateTeamCommand>().ReverseMap();
             CreateMap<Student, StudentDto>().ReverseMap();
             CreateMap<EventPerformer, EventPerformerDto>().ReverseMap();

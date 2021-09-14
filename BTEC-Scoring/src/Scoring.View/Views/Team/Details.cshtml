@@ -77,9 +77,6 @@
                 <th>
                     @Html.DisplayNameFor(model => model.CompletedEvents[0].SuccessfullyCompleted)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CompletedEvents[0].EventStorySource)
-                </th>
             </tr>
         </thead>
         <tbody>
@@ -97,10 +94,6 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.SuccessfullyCompleted)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EventStorySource)
-                    </td>
                 </tr>
             }
         </tbody>

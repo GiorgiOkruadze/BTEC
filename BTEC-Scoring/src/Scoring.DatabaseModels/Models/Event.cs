@@ -9,6 +9,7 @@ namespace Scoring.DatabaseModels.Models
         public EventType Type { get; set; }
         public string Description { get; set; }
         public int Rank { get; set; }
+        public int? PerformerTeamId { get; set; }
         public int? PerformerId { get; set; }
         [ForeignKey("PerformerId")]
         public EventPerformer Performer { get; set; }

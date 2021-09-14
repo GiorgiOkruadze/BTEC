@@ -1,0 +1,82 @@
+﻿@model Scoring.ApplicationShared.DTOs.EventViewModelForEdit
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>EventDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group  d-none">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventName" class="control-label"></label>
+                <input asp-for="EventName" class="form-control" />
+                <span asp-validation-for="EventName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <select asp-for="Type" class="form-control">
+                    <option value="0">Sporting</option>
+                    <option value="1">AcademicChallenge</option>
+                </select>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rank" class="control-label"></label>
+                <input asp-for="Rank" class="form-control" />
+                <span asp-validation-for="Rank" class="text-danger"></span>
+            </div>
+            @if (Model.PerformerTeamId != null)
+            {
+                <div class="form-group">
+                    <label class="control-label">PerformerTeamId</label>
+                    <input class="form-control" value="Event is Colpleted" disabled="disabled" />
+                    </div>
+            }
+            else
+            {
+            <div class="form-group">
+                    <label asp-for="PerformerTeamId" class="control-label"></label>
+                    <select asp-for="PerformerTeamId" class="form-control">
+                        @foreach (var item in Model.Teams)
+                        {
+                            <option value="@item.Id">@item.TeamName</option>
+                        }
+                    </select>
+                    <span asp-validation-for="PerformerTeamId" class="text-danger"></span>
+                
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsCompleted" /> @Html.DisplayNameFor(model => model.IsCompleted)
+                </label>
+            </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
