@@ -27,9 +27,11 @@ namespace Scoring.CoreServices.Repositories
             return await SaveAsync();
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var item = await _entity.FirstOrDefaultAsync(o => o.Id == id);
+            _entity.Remove(item);
+            return await SaveAsync();
         }
 
         public DbSet<T> Get()
@@ -39,12 +41,12 @@ namespace Scoring.CoreServices.Repositories
 
         public async Task<IEnumerable<T>> GetAllAsync(List<Expression<Func<T, object>>> includes)
         {
-            return await _entity.IncludeAll(includes).ToListAsync();
+            return await _entity.IncludeAll(includes).AsNoTracking().ToListAsync();
         }
 
         public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> filter = null, List<Expression<Func<T, object>>> includes = null)
         {
-            return await _entity.Where(filter).IncludeAll(includes).ToListAsync();
+            return await _entity.Where(filter).IncludeAll(includes).AsNoTracking().ToListAsync();
         }
 
         public async Task<T> GetOneAsync(Expression<Func<T, bool>> filter = null, List<Expression<Func<T, object>>> includes = null)

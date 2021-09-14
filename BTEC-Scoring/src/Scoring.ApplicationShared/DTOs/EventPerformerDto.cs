@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Scoring.DatabaseModels.Models
+namespace Scoring.ApplicationShared.DTOs
 {
-    public class EventPerformer:BaseEntity
+    public class EventPerformerDto
     {
+        public int Id { get; set; }
         public int? TeamId { get; set; }
-        public Team PerformerTeam { get; set; }
         public DateTime PerformDate { get; set; }
         public bool SuccessfullyCompleted { get; set; }
         public string EventStorySource { get; set; }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Scoring.ApplicationServices.Commands;
+using Scoring.ApplicationServices.Extensions;
 using Scoring.ApplicationServices.Queries;
 using Scoring.ApplicationShared.DTOs;
 using Scoring.CoreServices.Repositories.Abstractions;
@@ -29,18 +30,27 @@ namespace Scoring.View.Controllers
             return View(allTeams);
         }
 
-        // GET: TeamController/Details/5
-        public ActionResult Details(int id)
+
+        public async Task<ActionResult> Indsdfsdfsdfex()
         {
-            return View();
+            var allTeams = await _mediator.Send(new ReadAllTeamsQuery());
+            return View(allTeams);
         }
+
+        // GET: TeamController/Details/5
+        public async Task<ActionResult> Details(int id)
+        {
+            var team = await _mediator.Send(new ReadTeamByIdQuery() { TeamId = id});
+            return View(team);
+        }
+
 
         // GET: TeamController/Create
         public ActionResult Create()
         {
             var teamCommand = new CreateTeamCommand()
             {
-                Students = new List<StudentDto>() { new StudentDto(), new StudentDto(), new StudentDto(), new StudentDto(), new StudentDto() }
+                Students = new List<StudentDto>().AddItemsInCollection(5)
             };
             return View(teamCommand);
         }
@@ -50,57 +60,47 @@ namespace Scoring.View.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([FromForm] CreateTeamCommand team)
         {
-
             var result = await _mediator.Send(team);
             if (result) { 
                 return RedirectToAction(nameof(Index));
             }
-            else
-            {
-                return View();
-            }
+
+            return View();
         }
 
         // GET: TeamController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int id)
         {
-            return View();
+            var team = await _mediator.Send(new ReadTeamByIdQuery() { TeamId = id });
+            team.Students.AddItemsInCollection(5 - team.Students.Count);
+            return View(team);
         }
 
         // POST: TeamController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(int id, [FromForm] UpdateTeamCommand team)
         {
-            try
+            team.Id = id;
+            var result = await _mediator.Send(team);
+            if (result)
             {
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: TeamController/Delete/5
-        public ActionResult Delete(int id)
-        {
             return View();
         }
 
-        // POST: TeamController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        // GET: TeamController/Delete/5
+        public async Task<ActionResult> Delete(int id)
         {
-            try
+            var result = await _mediator.Send(new DeleteTeamCommand() { Id = id } );
+            if (result)
             {
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+
+            return View();
         }
     }
 }

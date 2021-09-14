@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>All Teams</h1>
 
 <p>
     <a asp-action="Create" class="btn btn-primary">Create New</a>
@@ -42,14 +42,14 @@
                 @Html.DisplayFor(modelItem => item.CompletedEventsCount)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {}, htmlAttributes: new { @class = "btn btn-warning col-md-12" }) 
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-warning col-md-12" }) 
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new {}, htmlAttributes: new { @class = "btn btn-success col-md-12" }) 
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-success col-md-12" }) 
 
             </td>
             <td>
-                @Html.ActionLink("Delete", "Delete", new {}, htmlAttributes: new { @class = "btn btn-danger col-md-12" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-danger col-md-12" })
             </td>
         </tr>
 }

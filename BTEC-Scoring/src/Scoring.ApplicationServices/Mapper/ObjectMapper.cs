@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Scoring.ApplicationServices.Commands;
 using Scoring.ApplicationShared.DTOs;
 using Scoring.DatabaseModels.Models;
 using System.Linq;
@@ -11,9 +12,12 @@ namespace Scoring.ApplicationServices.Mappers
         {
             CreateMap<Team, TeamDto>()
                 .ForMember(dtoModel => dtoModel.CompletedEventsCount, dbModel => dbModel.MapFrom(o => o.CompletedEvents.Count()))
+                .ForMember(dtoModel => dtoModel.MembersCount, dbModel => dbModel.MapFrom(o => o.Students.Count()))
                 .ReverseMap();
 
+            CreateMap<Team, UpdateTeamCommand>().ReverseMap();
             CreateMap<Student, StudentDto>().ReverseMap();
+            CreateMap<EventPerformer, EventPerformerDto>().ReverseMap();
         }
     }
 }
