@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scoring.CoreServices", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scoring.ApplicationShared", "src\Scoring.ApplicationShared\Scoring.ApplicationShared.csproj", "{007AED80-BE4B-42B8-ACDA-5327A6D62E1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scoring.ApplicationServices", "src\Scoring.ApplicationServices\Scoring.ApplicationServices.csproj", "{35245488-04D9-4E81-A82B-E08A30DD4400}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scoring.ApplicationServices", "src\Scoring.ApplicationServices\Scoring.ApplicationServices.csproj", "{35245488-04D9-4E81-A82B-E08A30DD4400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scoring.ExceptionLogger", "src\Scoring.ExceptionLogger\Scoring.ExceptionLogger.csproj", "{C2E9C0A5-38B9-4416-BF11-182036533312}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{35245488-04D9-4E81-A82B-E08A30DD4400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35245488-04D9-4E81-A82B-E08A30DD4400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35245488-04D9-4E81-A82B-E08A30DD4400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E9C0A5-38B9-4416-BF11-182036533312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E9C0A5-38B9-4416-BF11-182036533312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E9C0A5-38B9-4416-BF11-182036533312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E9C0A5-38B9-4416-BF11-182036533312}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

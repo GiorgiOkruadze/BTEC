@@ -16,6 +16,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="NLog.Config" Version="4.7.11" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +24,7 @@
     <ProjectReference Include="..\Scoring.ApplicationShared\Scoring.ApplicationShared.csproj" />
     <ProjectReference Include="..\Scoring.CoreServices\Scoring.CoreServices.csproj" />
     <ProjectReference Include="..\Scoring.DatabaseEntity\Scoring.DatabaseEntity.csproj" />
+    <ProjectReference Include="..\Scoring.ExceptionLogger\Scoring.ExceptionLogger.csproj" />
   </ItemGroup>
 
   <ItemGroup>
