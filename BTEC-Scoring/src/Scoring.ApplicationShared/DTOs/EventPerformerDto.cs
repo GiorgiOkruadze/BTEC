@@ -14,5 +14,6 @@ namespace Scoring.ApplicationShared.DTOs
         public bool SuccessfullyCompleted { get; set; }
         public TeamDto PerformerTeam { get; set; }
         public string EventStorySource { get; set; }
+        public EventDto Event { get; set; }
     }
 }

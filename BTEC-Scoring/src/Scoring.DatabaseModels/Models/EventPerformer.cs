@@ -9,5 +9,6 @@ namespace Scoring.DatabaseModels.Models
         public DateTime PerformDate { get; set; }
         public bool SuccessfullyCompleted { get; set; }
         public string EventStorySource { get; set; }
+        public Event Event { get; set; }
     }
 }

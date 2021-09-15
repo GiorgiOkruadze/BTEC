@@ -16,6 +16,9 @@
                 @Html.DisplayNameFor(model => model.PerformDate)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Event.Rank)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.SuccessfullyCompleted)
             </th>
             <th>
@@ -43,6 +46,9 @@
                     }
                 }
                 @completedStatus
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Event.Rank)
             </td>
             <td>
                 <a href="@item.EventStorySource">Event Resource Link</a>

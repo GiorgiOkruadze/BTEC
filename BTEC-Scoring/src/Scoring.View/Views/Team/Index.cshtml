@@ -22,6 +22,9 @@
                 @Html.DisplayNameFor(model => model.CompletedEventsCount)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Score)
+            </th>
+            <th>
             </th>
             <th>
             </th>
@@ -42,10 +45,13 @@
                 @Html.DisplayFor(modelItem => item.CompletedEventsCount)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-warning col-md-12" }) 
+                @Html.DisplayFor(modelItem => item.Score)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-success col-md-12" }) 
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-warning col-md-12" })
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-success col-md-12" })
 
             </td>
             <td>

@@ -14,5 +14,7 @@ namespace Scoring.ApplicationShared.DTOs
         public int CompletedEventsCount { get; set; }
         public List<StudentDto> Students { get; set; }
         public List<EventPerformerDto> CompletedEvents { get; set; }
+
+        public int Score { get; set; }
     }
 }

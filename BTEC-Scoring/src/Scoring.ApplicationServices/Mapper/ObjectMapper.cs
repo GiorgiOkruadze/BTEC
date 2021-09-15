@@ -13,6 +13,7 @@ namespace Scoring.ApplicationServices.Mappers
             CreateMap<Team, TeamDto>()
                 .ForMember(dtoModel => dtoModel.CompletedEventsCount, dbModel => dbModel.MapFrom(o => o.CompletedEvents.Count()))
                 .ForMember(dtoModel => dtoModel.MembersCount, dbModel => dbModel.MapFrom(o => o.Students.Count()))
+                .ForMember(dtoModel => dtoModel.Score, dbModel => dbModel.MapFrom(o => o.CompletedEvents.Sum(ce => ce.Event.Rank)))
                 .ReverseMap();
 
 

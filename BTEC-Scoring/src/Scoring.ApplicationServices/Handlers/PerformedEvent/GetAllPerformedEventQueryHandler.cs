@@ -26,7 +26,7 @@ namespace Scoring.ApplicationServices.Handlers
 
         public async Task<IEnumerable<EventPerformerDto>> Handle(GetAllPerformedEventQuery request, CancellationToken cancellationToken)
         {
-            var allPerformerEvents = await _performerRepository.GetAllAsync(new List<Expression<Func<EventPerformer, object>>>() { o => o.PerformerTeam });
+            var allPerformerEvents = await _performerRepository.GetAllAsync(new List<Expression<Func<EventPerformer, object>>>() {o=>o.Event, o => o.PerformerTeam });
 
             return _mapper.Map<List<EventPerformerDto>>(allPerformerEvents);
         }
