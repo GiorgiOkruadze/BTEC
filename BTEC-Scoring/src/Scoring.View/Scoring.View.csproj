@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Scoring.DatabaseEntity\Scoring.DatabaseEntity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\uploadedVideos\" />
+  </ItemGroup>
+
 </Project>

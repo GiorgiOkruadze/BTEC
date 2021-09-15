@@ -78,3 +78,8 @@ body {
 .d-none {
     display:none!important;
 }
+
+
+.p-b-10 {
+    padding-bottom:100px;
+}

@@ -30,13 +30,6 @@ namespace Scoring.View.Controllers
             return View(allTeams);
         }
 
-
-        public async Task<ActionResult> Indsdfsdfsdfex()
-        {
-            var allTeams = await _mediator.Send(new ReadAllTeamsQuery());
-            return View(allTeams);
-        }
-
         // GET: TeamController/Details/5
         public async Task<ActionResult> Details(int id)
         {

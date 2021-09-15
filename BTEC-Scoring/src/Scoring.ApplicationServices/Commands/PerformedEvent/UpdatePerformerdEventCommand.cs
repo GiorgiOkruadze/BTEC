@@ -1,12 +1,14 @@
-﻿using System;
+﻿using MediatR;
+using Scoring.ApplicationShared.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Scoring.ApplicationShared.DTOs
+namespace Scoring.ApplicationServices.Commands
 {
-    public class EventPerformerDto
+    public class UpdatePerformerdEventCommand:IRequest<bool>
     {
         public int Id { get; set; }
         public int? TeamId { get; set; }
