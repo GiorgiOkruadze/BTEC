@@ -1,15 +1,10 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Scoring.ApplicationServices.Commands;
 using Scoring.ApplicationServices.Extensions;
 using Scoring.ApplicationServices.Queries;
 using Scoring.ApplicationShared.DTOs;
-using Scoring.CoreServices.Repositories.Abstractions;
-using Scoring.DatabaseModels.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Scoring.View.Controllers
