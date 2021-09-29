@@ -41,7 +41,7 @@
                 </video>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary col-md-5" />
+                <input id="editPerformedEvent" type="submit" value="Save" class="btn btn-primary col-md-5" />
             </div>
         </form>
     </div>
@@ -51,6 +51,22 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+<article class="loader-cont">
+    <div class="loader">
+      <div class="inner one"></div>
+      <div class="inner two"></div>
+      <div class="inner three"></div>
+    </div>
+</article>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+<script>    
+    var submitBtn = document.querySelector("#editPerformedEvent");
+    submitBtn.addEventListener("click",function (){
+         var loader = document.querySelector(".loader-cont");
+         loader.style.display = "block";
+    });
+</script>

@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8c42bd-2bc4-4450-bb9d-ce28d5edf6ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Scoring.View/Controllers/TeamController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scoring.View/Controllers/TeamController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BTEC-Scoring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BTEC-Scoring/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210912162625_init.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210912162625_init.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210914145254_changes in colmpeted events table.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210914145254_changes in colmpeted events table.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210914155023_changes in team table.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210914155023_changes in team table.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210914155307_changes in team table, team members count row deleted.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210914155307_changes in team table, team members count row deleted.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210914172248_changes in event table, performerTeamId property added.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210914172248_changes in event table, performerTeamId property added.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210915172322_event property added in EventPerformer table.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/20210915172322_event property added in EventPerformer table.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.DatabaseEntity/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.View/Views/PerformedEvent/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scoring.View/Views/PerformedEvent/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.View/Views/PerformedEvent/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scoring.View/Views/PerformedEvent/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoring.View/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scoring.View/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +30,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/src/Scoring.View/wwwroot/css/site.css" />
+      <option value="$PROJECT_DIR$/src/Scoring.View/Views/PerformedEvent/Edit.cshtml" />
+      <option value="$PROJECT_DIR$/src/Scoring.View/Views/PerformedEvent/Index.cshtml" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1yGh9rpFyLwGzEoJmUYPR7NChPf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -26,6 +49,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -70,13 +97,14 @@
       <option name="presentableId" value="Default" />
       <updated>1631883687234</updated>
       <workItem from="1631883698492" duration="61000" />
+      <workItem from="1632936547360" duration="1023000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
